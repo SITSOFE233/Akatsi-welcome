@@ -9,12 +9,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    
+    .help-box {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .help-box .help-number { font-size: 1.4rem; font-weight: 600; margin: 8px 0 16px; letter-spacing: 1px; }
+    .help-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn-whatsapp { background: #25D366; color: #fff; border: none; }
+    .btn-whatsapp:hover { background: #1ebe5a; }
+    .wa-float {
+      position: fixed; left: 18px; bottom: 18px; z-index: 50;
+      display: flex; align-items: center; gap: 8px;
+      background: #25D366; color: #fff; text-decoration: none; font-weight: 600;
+      padding: 12px 18px; border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .wa-float:hover { background: #1ebe5a; }
+    @media (max-width: 480px) { .wa-float span { display: none; } .wa-float { padding: 14px; } }
+  </style>
 </head>
-    <body>
+<body>
 
   <canvas id="confetti" aria-hidden="true"></canvas>
 
-  
   <header class="nav" id="nav">
     <a href="#top" class="brand" aria-label="Akatsi College of Education home">
       <img class="brand-mark" src="logo.jpg">
@@ -30,10 +53,10 @@
         <li><a href="#checklist">Checklist</a></li>
         <li><a href="#life">College Life</a></li>
         <li><a href="#tips">Tips</a></li>
+        <li><a href="#help">Help Line</a></li>
       </ul>
     </nav>
   </header>
-
 
   <section class="hero" id="top">
     <div class="hero-bg" aria-hidden="true">
@@ -65,8 +88,9 @@
       <div class="hero-cta reveal">
         <a href="#greet" class="btn btn-primary">Get your welcome card</a>
         <a href="#journey" class="btn btn-ghost">See orientation week</a>
+        <a href="#help" class="btn btn-ghost">Need help?</a>
       </div>
-     
+
       <ul class="stats reveal">
         <li><strong data-count="5">0</strong><span>Days of orientation</span></li>
         <li><strong data-count="8">0</strong><span>First-week tasks</span></li>
@@ -75,14 +99,16 @@
     </div>
     <a href="#greet" class="scroll-hint" aria-label="Scroll down"><span></span></a>
   </section>
-<div class="anthem-standalone" style="margin-top:30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,215,0,0.3); backdrop-filter: blur(5px); border-radius: 16px; padding: 16px 20px; max-width: 380px;">
-  <p style="margin:0 0 10px 0; color:#FFD700; font-weight:700; font-size:14px; letter-spacing:1px;">🎵 COLLEGE ANTHEM</p>
-  <audio controls style="width:100%; height:40px; border-radius:20px;">
-    <source src="anthem.mp3" type="audio/mp4">
-    <source src="anthem.mp3" type="audio/mpeg">
-    Your browser does not support audio.
-  </audio>
-</div>
+
+  <div class="anthem-standalone" style="margin-top:30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,215,0,0.3); backdrop-filter: blur(5px); border-radius: 16px; padding: 16px 20px; max-width: 380px;">
+    <p style="margin:0 0 10px 0; color:#060606; font-weight:700; font-size:14px; letter-spacing:1px;">🎵 COLLEGE ANTHEM</p>
+    <audio controls style="width:100%; height:40px; border-radius:20px;">
+      <source src="Anthem.mp3" type="audio/mp3">
+      <source src="Anthem.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </div>
+
   <section class="section" id="greet">
     <div class="wrap two-col">
       <div class="reveal">
@@ -132,7 +158,6 @@
     </div>
   </section>
 
- 
   <section class="section alt" id="journey">
     <div class="wrap">
       <div class="head reveal">
@@ -145,7 +170,6 @@
       <div class="tab-panel reveal" id="panel" role="tabpanel" aria-live="polite"></div>
     </div>
   </section>
-
 
   <section class="section" id="checklist">
     <div class="wrap narrow">
@@ -165,7 +189,6 @@
     </div>
   </section>
 
- 
   <section class="section alt" id="life">
     <div class="wrap">
       <div class="head reveal">
@@ -199,7 +222,6 @@
     </div>
   </section>
 
- 
   <section class="section" id="tips">
     <div class="wrap narrow">
       <div class="head reveal">
@@ -217,7 +239,40 @@
     </div>
   </section>
 
- 
+  <section class="section alt" id="help">
+    <div class="wrap narrow">
+      <div class="head reveal">
+        <p class="kicker">We are here for you</p>
+        <h2>Freshers' Help Line</h2>
+        <p class="muted">Lost, confused or have a question? Send us a message on WhatsApp or give us a call and we will help you.</p>
+      </div>
+      <div class="help-box reveal">
+        <p class="muted">Line 1 &middot; WhatsApp / Call</p>
+        <p class="help-number">0202 151 961</p>
+        <div class="help-actions">
+          <a class="btn btn-whatsapp" id="waBtn" target="_blank" rel="noopener"
+             href="https://wa.me/233202151961?text=Hello%2C%20I%20am%20a%20fresher%20at%20Akatsi%20College%20of%20Education%20and%20I%20need%20help.">
+             Chat on WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="tel:+233202151961">Call now</a>
+        </div>
+
+        <hr style="border:none; border-top:1px solid rgba(0,0,0,0.1); margin:24px 0;">
+
+        <p class="muted">Line 2 &middot; WhatsApp / Call</p>
+        <p class="help-number">0530 467 216</p>
+        <div class="help-actions">
+          <a class="btn btn-whatsapp" target="_blank" rel="noopener"
+             href="https://wa.me/233530467216?text=Hello%2C%20I%20am%20a%20fresher%20at%20Akatsi%20College%20of%20Education%20and%20I%20need%20help.">
+             Chat on WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="tel:+233530467216">Call now</a>
+        </div>
+        <p class="muted small" style="margin-top:14px;">Available daily during orientation week.</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="wrap">
       <p class="foot-big">Akwaaba &middot; Woezɔ &middot; Welcome</p>
@@ -225,6 +280,12 @@
       <p class="small">&copy; <span id="yearB"></span> Akatsi College of Education. Prepared to welcome our new students.</p>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a class="wa-float" href="https://wa.me/233202151961?text=Hello%2C%20I%20am%20a%20fresher%20at%20Akatsi%20College%20of%20Education%20and%20I%20need%20help."
+     target="_blank" rel="noopener" aria-label="Chat with the help line on WhatsApp">
+    <span aria-hidden="true">💬</span><span>Need help?</span>
+  </a>
 
   <button class="to-top" id="toTop" aria-label="Back to top" hidden>↑</button>
 
