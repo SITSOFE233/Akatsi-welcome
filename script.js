@@ -1,5 +1,4 @@
 
-
 "use strict";
 const GREETINGS = [
   "Welcome",     // English
@@ -90,7 +89,8 @@ const QUOTES = [
   "A good teacher is a lamp that lights many others.",
   "Today you are a student. Tomorrow you will shape a nation.",
   "Teach with your heart and the lessons will last for life.",
-  "Every great teacher was once a nervous fresher."
+  "Every great teacher was once a nervous fresher.",
+  "Growth mindset start with taking a single step towords your goals"
 ];
 
 
@@ -404,3 +404,4 @@ function wrapText(g, text, x, y, maxW, lineH) {
     setTimeout(() => { i = (i + 1) % TIPS.length; render(); text.classList.remove("swap"); }, 230);
   });
 })();
+
