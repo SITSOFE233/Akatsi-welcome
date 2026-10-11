@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome, Freshers | Akatsi College of Education</title>
+  <meta name="description" content="A warm welcome to all new students of Akatsi College of Education.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  
+  <header class="nav" id="nav">
+    <a href="#top" class="brand" aria-label="Akatsi College of Education home">
+      <img class="brand-mark" src="logo.jpg">
+      <span class="brand-text">Akatsi College<br><small>of Education</small></span>
+    </a>
+    <nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="menu">
+        <li><a href="#greet">Your Welcome</a></li>
+        <li><a href="#journey">Orientation</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+        <li><a href="#life">College Life</a></li>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+      <svg class="kente" viewBox="0 0 400 400" aria-hidden="true">
+        <defs>
+          <pattern id="kp" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="3" fill="currentColor"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="400" fill="url(#kp)"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Class of <span id="yearA"></span> &middot; Freshers' Orientation</p>
+      <h1 class="reveal">
+        <span class="hello"><span id="typed"></span><span class="caret" aria-hidden="true"></span></span>
+        <span class="to">to Akatsi College of Education</span>
+      </h1>
+      <p class="lead reveal">
+        You have taken the first step toward becoming a teacher who shapes
+        the future. We are proud to have you, and we are ready to walk this
+        journey with you.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#greet" class="btn btn-primary">Get your welcome card</a>
+        <a href="#journey" class="btn btn-ghost">See orientation week</a>
+      </div>
+
+      <ul class="stats reveal">
+        <li><strong data-count="5">0</strong><span>Days of orientation</span></li>
+        <li><strong data-count="8">0</strong><span>First-week tasks</span></li>
+        <li><strong data-count="5">0</strong><span>Languages of welcome</span></li>
+      </ul>
+    </div>
+    <a href="#greet" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <section class="section" id="greet">
+    <div class="wrap two-col">
+      <div class="reveal">
+        <p class="kicker">Make it personal</p>
+        <h2>Tell us who you are</h2>
+        <p class="muted">Type your name,choose your programme and your phone number. We will prepare a welcome card just for you.</p>
+
+        <form id="greetForm" class="form" autocomplete="off">
+          <label for="name">Your name</label>
+          <input id="name" type="text" placeholder="e.g. David Sitsofe" maxlength="40" required>
+
+          <label for="programme">Programme</label>
+          <select id="programme" required>
+            <option value="" disabled selected>Choose your programme</option>
+            <option>Early Childhood Education</option>
+            <option>Primary Education</option>
+            <option>Junior High School Education</option>
+            <option>Other programme</option>
+          </select>
+          <label for="phone">phone number</label>
+          <input id="phone" type="tel"
+          placeholder="e.g 0544016860" pattern="[0-9]{10}" title="Enter 10 digit number e.g 0544016860" required>
+
+          <button type="submit" class="btn btn-primary">Create my welcome card</button>
+        </form>
+      </div>
+
+      <div class="reveal">
+        <article class="card-preview" id="card" aria-live="polite">
+          <div class="card-top">
+            <span class="brand-mark small">A</span>
+            <span>Akatsi College of Education</span>
+          </div>
+          <p class="card-greet" id="cardGreet">Your card will appear here</p>
+          <h3 class="card-name" id="cardName">Future Teacher</h3>
+          <p class="card-prog" id="cardProg">Fill in the form and press the button</p>
+          <p class="card-msg" id="cardMsg">
+            &ldquo;A good teacher is a lamp that lights many others.&rdquo;
+          </p>
+          <div class="card-foot">
+            <span id="cardDate"></span>
+            <span>#FreshersWelcome</span>
+          </div>
+        </article>
+        <button class="btn btn-ghost full" id="downloadBtn" type="button" hidden>Save my card as a picture</button>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="section alt" id="journey">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="kicker">Orientation week</p>
+        <h2>Your first days, step by step</h2>
+        <p class="muted">Tap a day to see what to expect. The times and activities are examples; follow the official programme given by the college.</p>
+      </div>
+
+      <div class="tabs reveal" id="tabs" role="tablist" aria-label="Orientation days"></div>
+      <div class="tab-panel reveal" id="panel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+
+  <section class="section" id="checklist">
+    <div class="wrap narrow">
+      <div class="head reveal">
+        <p class="kicker">Get ready</p>
+        <h2>Your first-week checklist</h2>
+        <p class="muted">Tick each item as you finish it. Your progress is saved on this device.</p>
+      </div>
+
+      <div class="progress reveal" aria-label="Checklist progress">
+        <div class="bar"><div class="fill" id="fill"></div></div>
+        <span id="pct">0%</span>
+      </div>
+
+      <ul class="checks reveal" id="checks"></ul>
+      <p class="done-msg" id="doneMsg" hidden>Well done! You are ready for a great start. Akwaaba!</p>
+    </div>
+  </section>
+
+ 
+  <section class="section alt" id="life">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="kicker">Life on campus</p>
+        <h2>More than lectures</h2>
+        <p class="muted">College is about learning, friendships and growing into a confident teacher.</p>
+      </div>
+
+      <div class="grid">
+        <article class="tile reveal">
+          <span class="ico">📚</span>
+          <h3>Learn</h3>
+          <p>Build strong subject knowledge and the teaching skills you need for the classroom, from lesson planning to classroom management.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="ico">🤝</span>
+          <h3>Belong</h3>
+          <p>Meet course mates, join clubs and societies, and make friends who will walk with you long after graduation.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="ico">🎓</span>
+          <h3>Practise</h3>
+          <p>Gain real experience through teaching practice, where you try out what you have learned with real pupils.</p>
+        </article>
+        <article class="tile reveal">
+          <span class="ico">🌱</span>
+          <h3>Grow</h3>
+          <p>Develop leadership, character and discipline. Your values will matter as much as your grades.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="section" id="tips">
+    <div class="wrap narrow">
+      <div class="head reveal">
+        <p class="kicker">Advice from us to you</p>
+        <h2>Tips for a strong start</h2>
+        <p class="muted">Press the button to see a new tip.</p>
+      </div>
+      <div class="tip reveal">
+        <p id="tipText">Plan your week. A simple timetable keeps lectures, study and rest in balance.</p>
+        <div class="tip-actions">
+          <button class="btn btn-primary" id="tipBtn" type="button">Another tip</button>
+          <span id="tipCount">1 / 8</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <footer class="footer">
+    <div class="wrap">
+      <p class="foot-big">Akwaaba &middot; Woezɔ &middot; Welcome</p>
+      <p><b>DAVID</b> SITSOFE(0544016860) Akatsi College of Education &mdash; Freshers' Welcome Page</p>
+      <p class="small">&copy; <span id="yearB"></span> Akatsi College of Education. Prepared to welcome our new students.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top" hidden>↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
